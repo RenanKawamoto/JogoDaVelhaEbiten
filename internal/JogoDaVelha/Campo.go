@@ -118,3 +118,7 @@ func (c *Campo) Desenhar(matrizDoJogo [3][3]string) *ebiten.Image {
 	}
 	return c.Imagem
 }
+
+func (c *Campo) Limpar(matrizDoJogo *[3][3]string) {
+	*matrizDoJogo = [3][3]string{}
+}

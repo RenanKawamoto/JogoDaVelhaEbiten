@@ -14,6 +14,7 @@ const AlturaDaTela int = 40
 var campo JogoDaVelha.Campo
 var matriz [3][3]string
 var jogador JogoDaVelha.Jogador
+var mostrarVencedor bool
 
 type Game struct {
 }
@@ -23,15 +24,22 @@ func init() {
 	jogador = JogoDaVelha.Jogador{XOuO: "O"}
 	matriz = [3][3]string{{"", "", ""}, {"", "", ""}, {"", "", ""}}
 	campo.CriarCampo()
+	mostrarVencedor = false
 }
 
 func (g *Game) Update() error {
 	x, y := ebiten.CursorPosition()
-	fmt.Println(x, y)
+
+	if JogoDaVelha.GanharJogo(matriz) != "" {
+		campo.Limpar(&matriz)
+		campo.CriarCampo()
+		mostrarVencedor = true
+	}
+
 	if ebiten.IsMouseButtonPressed(ebiten.MouseButtonLeft) {
-		xMatriz, yMatriz := jogador.ConverterPosicaoDoCursor(x, y)
+		xMatriz, yMatriz := JogoDaVelha.ConverterPosicaoDoCursor(x, y)
 		jogador.Jogar(&matriz, xMatriz, yMatriz)
-		fmt.Println(xMatriz, yMatriz)
+		fmt.Println(matriz)
 	}
 	return nil
 }
@@ -39,8 +47,11 @@ func (g *Game) Update() error {
 func (g *Game) Draw(screen *ebiten.Image) {
 	op := ebiten.DrawImageOptions{}
 	op.GeoM.Translate(4, 2)
+	if mostrarVencedor {
+		campo.Limpar(&matriz)
+		mostrarVencedor = false
+	}
 	screen.DrawImage(campo.Desenhar(matriz), &op)
-
 }
 
 func (g *Game) Layout(outsideWidth, outsideHeight int) (screenWidth, screenHeight int) {

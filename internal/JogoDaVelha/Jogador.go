@@ -23,16 +23,3 @@ func (j *Jogador) Jogar(matriz *[3][3]string, linha, coluna int) {
 		}
 	}
 }
-
-func (j *Jogador) ConverterPosicaoDoCursor(x, y int) (int, int) {
-	if x >= 0 && x <= 13 && y >= 0 && y <= 11 {
-		return 0, 0
-	}
-	if x >= 13 && x <= 24 && y >= 0 && y <= 11 {
-		return 0, 1
-	}
-	if x >= 26 && x <= 35 && y >= 0 && y <= 11 {
-		return 0, 2
-	}
-	return 2, 2
-}
