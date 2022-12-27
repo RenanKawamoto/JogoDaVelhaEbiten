@@ -30,3 +30,15 @@ func ConverterPosicaoDoCursor(x, y int) (int, int) {
 	}
 	return -1, -1
 }
+
+func AindaNaoFinalizouOJogo(matriz [3][3]string) bool {
+	contadorDeEspacos := 0
+	for _, conteudoDaMatriz := range matriz {
+		for _, conteudoDoArray := range conteudoDaMatriz {
+			if conteudoDoArray == "" {
+				contadorDeEspacos++
+			}
+		}
+	}
+	return contadorDeEspacos > 0
+}
