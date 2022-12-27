@@ -1,7 +1,6 @@
 package Jogo
 
 import (
-	"fmt"
 	"image/color"
 
 	"github.com/RenanKawamoto/JogoDaVelhaEbiten/internal/JogoDaVelha"
@@ -38,7 +37,6 @@ func (g *Game) Update() error {
 	if inpututil.IsMouseButtonJustPressed(ebiten.MouseButtonLeft) {
 		xMatriz, yMatriz := JogoDaVelha.ConverterPosicaoDoCursor(x, y)
 		jogador.Jogar(&matriz, xMatriz, yMatriz)
-		fmt.Println(matriz)
 	}
 	return nil
 }
