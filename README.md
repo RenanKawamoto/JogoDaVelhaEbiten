@@ -2,11 +2,11 @@
 
 ## Tecnologias:
 
-- Esse é um projeto simples e pequeno feito com linguagem de programação :sparkles: **Go/golang** :sparkles: e o framework/game engine ebiten :fire:
+- Esse é um projeto simples e pequeno feito com *linguagem de programação* :sparkles: **Go/golang** :sparkles: e o *framework/game engine* :fire: **ebiten** :fire:
 
 ## Resumo do projeto:
 
-- Criado para ser um projeto de aprendizagem tanto em relação a linguagem go, visto que é a primeira vez que produzo algo real com ela, quanto ao framework ebiten.
+- Criado para ser um projeto de aprendizagem tanto em relação a linguagem **go**, visto que é a primeira vez que produzo algo real com ela, quanto ao framework **ebiten**.
 
 - Por ser um "territorio novo" tive algumas dificuldades, que estão refletidas no código, sendo algumas delas:
     - Maneira de organizar um código para facilitar a manutenção futuramente.
