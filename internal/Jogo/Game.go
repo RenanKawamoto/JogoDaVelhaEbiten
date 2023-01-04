@@ -53,7 +53,7 @@ func (g *Game) Update() error {
 
 func (g *Game) Draw(screen *ebiten.Image) {
 	op := ebiten.DrawImageOptions{}
-	op.GeoM.Translate(4, 2)
+	op.GeoM.Translate(4, 4)
 	if alterarTelaParaResultado {
 		screen.DrawImage(JogoDaVelha.QuemVenceu(ganhador), nil)
 	} else {
